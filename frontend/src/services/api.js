@@ -3,7 +3,7 @@ export const predictDigit = async (imageBlob) => {
       const formData = new FormData();
       formData.append('file', imageBlob);
   
-      const response = await fetch('https://digit-recognizer-jq0k.onrender.com/predict', {
+      const response = await fetch('https://digit-recognizer-production.up.railway.app/predict', {
         method: 'POST',
         body: formData,
       });
