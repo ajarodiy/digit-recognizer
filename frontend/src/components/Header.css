@@ -49,6 +49,7 @@
 @media (max-width: 768px) {
     .header-title {
         font-size: 1.5rem;
+        white-space: normal;
     }
 
     .header-subtitle {
@@ -56,7 +57,6 @@
     }
 
     .header-icon {
-        width: 24px;
-        height: 24px;
+        display: none;
     }
 }

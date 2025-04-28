@@ -17,6 +17,7 @@ const PredictionResult = ({ prediction, error, isLoading }) => {
       <div className="result-box loading-result">
         <div className="loading-spinner"></div>
         <p className="loading-text">Processing...</p>
+        <p className="loading-tip">First time might take 15-20 seconds to start. After that, it will be instant!</p>
       </div>
     );
   }

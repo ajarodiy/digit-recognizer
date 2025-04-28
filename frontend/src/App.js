@@ -37,17 +37,33 @@ function App() {
       <div className="content-wrapper">
         <Header />
         <Instructions />
-        <DigitCanvas onImageCapture={handleImageCapture} />
-        
-        {(isLoading || prediction !== null || error) && (
-          <div className="result-container">
-            <PredictionResult 
-              prediction={prediction} 
-              error={error}
-              isLoading={isLoading}
-            />
-          </div>
-        )}
+        <div className="main-content">
+          <DigitCanvas onImageCapture={handleImageCapture} />
+
+          {(isLoading || prediction !== null || error) && (
+            <div className="result-container">
+              <PredictionResult 
+                prediction={prediction} 
+                error={error}
+                isLoading={isLoading}
+              />
+            </div>
+          )}
+        </div>
+
+        <div className="model-details">
+          <h2>Model Details</h2>
+          <p>
+            This Convolutional Neural Network (CNN) processes handwritten digits through:
+          </p>
+          <ul>
+            <li>First Conv2D layer (32 filters) → MaxPooling2D</li>
+            <li>Second Conv2D layer (64 filters) → MaxPooling2D</li>
+            <li>Flatten layer</li>
+            <li>Dense layer (64 neurons)</li>
+            <li>Output Dense layer (10 neurons, one for each digit)</li>
+          </ul>
+        </div>
       </div>
     </div>
   );

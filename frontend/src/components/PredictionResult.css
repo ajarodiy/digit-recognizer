@@ -105,6 +105,13 @@
     text-align: center;
 }
 
+.loading-tip {
+    margin-top: 8px;
+    color: var(--color-text-tertiary);
+    font-size: 0.875rem;
+    text-align: center;
+}
+
 @keyframes pulsate {
     0% {
         transform: scale(1);
