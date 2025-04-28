@@ -1,0 +1,9 @@
+{
+    "rewrites": [
+      {
+        "source": "/digit-recognizer/:path*",
+        "destination": "/:path*"
+      }
+    ]
+  }
+  
