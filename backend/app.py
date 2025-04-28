@@ -5,7 +5,7 @@ import numpy as np
 from PIL import Image
 import io
 
-model = tf.keras.models.load_model('digit_model')
+model = tf.keras.models.load_model('digit_model.keras')
 app = Flask(__name__)
 CORS(app)
 
