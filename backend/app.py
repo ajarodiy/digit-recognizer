@@ -13,6 +13,10 @@ CORS(app)
 def index():
     return "Service is running!"
 
+@app.route("/ping")
+def ping():
+    return "OK", 200
+
 @app.route('/predict', methods=['POST'])
 def predict():
     if 'file' not in request.files:

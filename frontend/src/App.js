@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
 import Instructions from './components/Instructions';
 import DigitCanvas from './components/DigitCanvas';
@@ -10,6 +10,13 @@ function App() {
   const [prediction, setPrediction] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  // Wake-up ping to backend on initial load
+  useEffect(() => {
+    fetch('https://digit-recognizer-lfo8.onrender.com/ping')
+      .then(() => console.log("🔋 Backend wake-up ping sent"))
+      .catch(err => console.log("⚠️ Backend might still be sleeping", err));
+  }, []);
 
   const handleImageCapture = async (imageBlob) => {
     setIsLoading(true);
